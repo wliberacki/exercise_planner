@@ -1,0 +1,38 @@
+﻿@model exercise_planner.Models.DbModels.Plan
+
+@{
+    ViewBag.Title = "Delete Plan";
+}
+
+<h2>Delete Plan</h2>
+
+<h3>Are you sure you want to delete this plan?</h3>
+
+<div>
+    <h4>Plan Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Plan ID</dt>
+        <dd>@Model.PlanId</dd>
+        <dt>User</dt>
+        <dd>@($"{Model.Users.Name} {Model.Users.Surname}")</dd>
+        <dt>Exercises</dt>
+        <dd>
+            @foreach (var exercise in Model.PlannedList)
+            {
+                <p>@exercise.Name</p>
+            }
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <input type="hidden" name="id" value="@Model.PlanId" />
+        <p>
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            @Html.ActionLink("Cancel", "ViewAll", null, new { @class = "btn btn-secondary" })
+        </p>
+    }
+</div>

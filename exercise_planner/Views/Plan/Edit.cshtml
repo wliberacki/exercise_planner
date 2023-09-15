@@ -1,0 +1,41 @@
+﻿@model exercise_planner.Models.PlanEditViewModel
+
+@{
+    ViewBag.Title = "Edit Plan";
+}
+
+<h2>Edit Plan</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SelectedUserId, "User")
+        @Html.DropDownListFor(model => model.SelectedUserId, new SelectList(Model.Users, "UserId", "Surname"), "Select User", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.SelectedUserId)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SelectedExercises, "Exercises")
+        <br />
+        @if (Model.Exercises != null)
+        {
+            foreach (var exercise in Model.Exercises)
+            {
+                <label>
+                    <input type="checkbox" name="SelectedExercises" value="@exercise.ExerciseId" @(Model.SelectedExercises != null && Model.SelectedExercises.Contains(exercise.ExerciseId) ? "checked" : "") />
+                    @exercise.Name
+                </label>
+                <br />
+            }
+        }
+        else
+        {
+            <p>No exercises found.</p>
+        }
+        @Html.ValidationMessageFor(model => model.SelectedExercises)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+}

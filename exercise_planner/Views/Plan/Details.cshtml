@@ -1,0 +1,44 @@
+﻿@model exercise_planner.Models.DbModels.Plan
+
+@{
+    ViewBag.Title = "Plan Details";
+}
+
+<h2>Plan Details</h2>
+
+<div>
+    <h4>Plan ID: @Model.PlanId</h4>
+    <h4>User: @($"{Model.Users.Name} {Model.Users.Surname}")</h4>
+</div>
+
+@if (Model.PlannedList.Count > 0)
+{
+    <h4>Exercises:</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sets</th>
+                <th>Repetitions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var exercise in Model.PlannedList)
+            {
+                <tr>
+                    <td>@exercise.Name</td>
+                    <td>@exercise.Series</td>
+                    <td>@exercise.Repetitions</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No exercises found for this plan.</p>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "ViewAll", "Plan", null, new { @class = "btn btn-primary" })
+</div>

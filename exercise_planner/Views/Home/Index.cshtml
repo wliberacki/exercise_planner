@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Planer";
+}
+
+<style>
+    h1 {
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 200px;
+    }
+
+    #buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .button-wrapper {
+        margin: 0 10px;
+        flex: 1;
+        text-align: center;
+    }
+
+    button {
+        padding: 15px 30px;
+        background-color: #ccc;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s;
+        width: 100%;
+        max-width: 200px;
+        color: burlywood;
+    }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        button a {
+            text-decoration: none;
+            color: #fff;
+        }
+</style>
+
+<h1>Planer ćwiczeń</h1>
+
+<div id="buttons">
+    <div class="button-wrapper">
+        <button><a href="https://localhost:44342/Plan/ViewAll">Przeglądaj plany</a></button>
+    </div>
+    <div class="button-wrapper">
+        <button><a href="https://localhost:44342/Exercise/ViewAll">Zobacz ćwiczenia</a></button>
+    </div>
+    <div class="button-wrapper">
+        <button><a href="https://localhost:44342/User/ViewAll">Użytkownicy</a></button>
+    </div>
+</div>

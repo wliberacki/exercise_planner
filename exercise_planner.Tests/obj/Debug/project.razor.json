@@ -1,0 +1,20 @@
+{
+  "SerializedFilePath": "c:\\Users\\wojte\\Desktop\\PROJEKTY\\Kucharz_Liberacki_Kopanko\\Kucharz_Liberacki_Kopanko.Tests\\obj\\Debug\\project.razor.json",
+  "FilePath": "c:\\Users\\wojte\\Desktop\\PROJEKTY\\Kucharz_Liberacki_Kopanko\\Kucharz_Liberacki_Kopanko.Tests\\Kucharz_Liberacki_Kopanko.Tests.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": null,
+  "Documents": [],
+  "SerializationFormat": "0.3"
+}

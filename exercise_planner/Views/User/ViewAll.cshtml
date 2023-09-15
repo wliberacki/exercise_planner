@@ -1,0 +1,39 @@
+﻿@model List<exercise_planner.Models.DbModels.User>
+
+@{
+    ViewBag.Title = "View All Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View All Users</h2>
+
+@Html.ActionLink("Create New User", "Create", null, new { @class = "btn btn-primary" })
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Sex</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.Surname</td>
+                <td>@user.Height</td>
+                <td>@user.Weight</td>
+                <td>@user.Sex1</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = user.UserId }, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Delete", "Delete", new { id = user.UserId }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
